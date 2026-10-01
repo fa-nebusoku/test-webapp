@@ -13,5 +13,9 @@ app.get('/crash', (req, res) => {
   process.exit(1);
 });
 
+app.get('/version', (req, res) => {
+  res.send(`App version: ${process.env.APP_VERSION || 'unset'}`);
+});
+
 const PORT = 3000;
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
